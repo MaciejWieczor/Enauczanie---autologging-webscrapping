@@ -4,9 +4,9 @@ import json
 
 url = "https://enauczanie.pg.edu.pl/moodle/login/"
 przycisk = "btn-submit"
-login = input("Podaj login : ")     #w przyszlosci niech czyta z osobistego pliku txt zamiast z klawiatury
-haslo = input("Podaj haslo : ")
-loger = Enauczanie(url, przycisk, login, haslo)
+with open("test.txt") as f:
+    lines = f.readlines()
+loger = Enauczanie(url, przycisk, lines[0], lines[1])
 loger.ini_driver()
 loger.logging()
 
